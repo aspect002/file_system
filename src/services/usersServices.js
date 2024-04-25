@@ -5,12 +5,7 @@ class UsersServices {
     getUsers() {
         return FileHelper.readFile('data.json')
     }
-    async createUser(body) {
-        const result = await FileHelper.readFile('data.json')
-
-
-        result.push(body)
-
+    async createUser(result) {
         return await FileHelper.writeFile('data.json', result)
     }
 }
